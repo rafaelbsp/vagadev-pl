@@ -1,17 +1,42 @@
 import React from 'react'
 
+import n1logo from '../../assets/svgs/Logo_N1.svg'
+import iconBurguerDesktop from '../../assets/svgs/icon_hamburguer.svg'
+import iconCart from '../../assets/svgs/shopping-bag-solid.svg'
+import iconContato from '../../assets/svgs/paper-plane.svg'
+import iconBusca from '../../assets/svgs/search-solid.svg'
+
 import "./Navbar.css"
 
 const Navbar = () => {
   return (
     <nav className="nav-container">
-        <img src='/assets/Logo_N1.svg'/>
-        <img src=''/>
-        TESTSTTSTSTSTS
+        
+        <div className="nav-subContainer">
+            <img src={iconBurguerDesktop} className="icon-burguer" alt="Icon burguer" />
 
-        <button>
+            <a href='/' >
+                <img src={n1logo} className="logo-n1" alt="N1 logo" />
+            </a>
+        </div>
 
-        </button>
+        <div className="nav-subContainer">
+
+            <a className="nav-link" href='/contato' >
+                <img src={iconContato} className="icon-contato" alt="Icon contato" />
+                <span>Contato</span>
+            </a>
+
+            <div className="nav-search">
+                <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
+                <span>Buscar</span>
+            </div>
+
+            <button className="miniCart-button" >
+                <img src={iconCart} className="icon-cart" alt="Icon cart" />
+                <span>2</span>
+            </button>
+        </div>
     </nav>
   )
 }

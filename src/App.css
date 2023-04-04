@@ -7,9 +7,13 @@
 }
 
 body {
-  background: beige;
-  
+  background: blue;
   color: #000;
+}
+
+.container {
+  width: 100%;
+  display: flex;
 }
 
 .card {
