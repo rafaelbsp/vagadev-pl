@@ -1,0 +1,91 @@
+// @import "src/styles/scaffold";
+
+.carrousel-images {
+  position: relative;
+  width: 100%;
+
+  .slick-prev {
+    position: absolute;
+    bottom: 50%;
+    left: 15px;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .slick-next {
+    position: absolute;
+    right: 15px;
+    bottom: 50%;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .slick-list {
+    position: relative;
+    display: block;
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    overflow: hidden;
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 1025px) {
+      
+      width: 100%;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    padding: 0;
+    margin: 0 auto;
+
+    li {
+      display: flex;
+      margin: 0 4px;
+
+      &.slick-active {
+        button {
+          display: flex;
+          width: 36px;
+          height: 3px;
+          padding: 0;
+          font-size: 0;
+          color: transparent;
+          cursor: pointer;
+          background: transparent;
+          background: #000000;
+          border: none;
+          transition: border .5s ease-in-out;
+        }
+      }
+
+      button {
+        display: flex;
+        width: 36px;
+        height: 1px;
+        padding: 0;
+        font-size: 0;
+        color: transparent;
+        cursor: pointer;
+        background: transparent;
+        background: #000000;
+        border: none;
+        transition: border .5s ease-in-out;
+      }
+    }
+  }
+}

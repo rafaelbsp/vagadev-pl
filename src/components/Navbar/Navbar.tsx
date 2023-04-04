@@ -6,7 +6,7 @@ import iconCart from '../../assets/svgs/shopping-bag-solid.svg'
 import iconContato from '../../assets/svgs/paper-plane.svg'
 import iconBusca from '../../assets/svgs/search-solid.svg'
 
-import "./Navbar.css"
+import "./Navbar.scss"
 
 const Navbar = () => {
   return (
