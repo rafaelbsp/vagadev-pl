@@ -6,8 +6,8 @@
 
   .slick-prev {
     position: absolute;
-    bottom: 50%;
-    left: 15px;
+    bottom: 28%;
+    right: 40px;
     z-index: 10;
     cursor: pointer;
   }
@@ -15,7 +15,7 @@
   .slick-next {
     position: absolute;
     right: 15px;
-    bottom: 50%;
+    bottom: 28%;
     z-index: 10;
     cursor: pointer;
   }
@@ -23,7 +23,7 @@
   .slick-list {
     position: relative;
     display: block;
-    width: calc(100% - 80px);
+    // width: calc(100% - 80px);
     margin: 0 auto;
     overflow: hidden;
 
@@ -36,7 +36,6 @@
     }
 
     @media (min-width: 1025px) {
-      
       width: 100%;
     }
   }
@@ -46,7 +45,7 @@
     right: 0;
     bottom: 35px;
     left: 0;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: flex-start;
     width: fit-content;
@@ -85,6 +84,136 @@
         background: #000000;
         border: none;
         transition: border .5s ease-in-out;
+      }
+    }
+  }
+
+  .cotainerDotsCustom {
+    background-color: #084154;
+    background-color: #3EC6E0;
+  }
+}
+
+.containerBannerCustom {
+  position: relative;
+  height: 840px;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+
+  .infoBanner {
+    position: inherit;
+    z-index: 99;
+    text-align: end;
+    right: 90px;
+    bottom: 60px;
+
+    @media (max-width: 1200px){
+      left: 215px;
+    }
+
+    .nameBannerCustom p {
+      font-family: "Roboto";
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 54px;
+      letter-spacing: 0em;
+      color: #fff;
+    }
+    .priceBannerCustom p {
+      font-family: "Roboto";
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 82px;
+      letter-spacing: 0em;
+      color: #3EC6E0;
+    }
+
+    .textBannerCustom {
+      max-width: 400px;
+
+      @media (max-width: 1200px) {
+        margin: 0 0 0 auto;
+      }
+      
+      p {
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: right;
+        color: #fff;
+      }
+    }
+
+  }
+
+  .imageBanner {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  
+  .infoBarBanner {
+
+    display: flex;
+    flex-direction: row;
+    position: inherit;
+    text-align: end;
+
+    z-index: 99;
+    left: 160px;
+    top: 3px;
+
+    width: 384px;
+    height: 63px;
+
+    transform: rotate(90deg);
+
+    .nameBarBanner {
+      display: flex;
+      justify-content: space-around;
+      background-color: #3EC6E0;
+      width: 80%;
+      padding: 0 15px;
+      gap: 20px;
+
+      p {
+        font-family: "Roboto";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-transform: uppercase;
+        color: #fff;
+        margin: auto 10px;
+      }
+
+      .lineBarBanner {
+        background-color: #fff;
+        border-bottom: 1px solid #fff;
+        width: 30%;
+        height: 1px;
+        margin: auto;
+      }
+    }
+    
+    .textBarBanner {
+      background: #084154;
+      border-bottom-right-radius: 10px;
+      width: 20%;
+      display: flex;
+      padding: 10px;
+      align-items: center;
+
+      .pageActiveBarBanner {
+        transform: rotate(-90deg);
+        font-family: "Roboto";
+        color: #fff;
       }
     }
   }

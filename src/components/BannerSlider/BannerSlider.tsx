@@ -10,7 +10,7 @@ interface Props {
     showPaginationDots: SlidesDeviceToShow;
     infinite: boolean;
     usePagination: boolean;
-    children: React.ReactNode [];
+    children: any;
     speed: number,
     slidesToShow: number,
     slidesToScroll: number,
@@ -30,12 +30,16 @@ interface PropsSlickArrow {
     onClick?: (arg:unknown)=> unknown;
 }
 
-export default function BannerSlider({ children,
+export default function BannerSlider({
+    children,
     showNavigationArrows = "always",
     showPaginationDots = "always",
     nextArrow = "",
     prevArrow = ""
 }: Props) {
+
+    console.log("games children",children)
+
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
     const [ showDotsInDevice, setShowDots ] = useState(true);
     const isMobile = false;
@@ -98,8 +102,41 @@ export default function BannerSlider({ children,
     return (
         <>
             <Slider {...settings}>
-                {children?.length > 0 ? children : null}
+                {/* {children?.length > 0 ? children : null} */}
+
+                    { children.map((item: any, index: React.Key | null | undefined)=>(
+                        <div className="containerBannerCustom">
+                            
+                            <div className="infoBanner">
+                                <div className="nameBannerCustom">
+                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                                </div>
+                                <div className="priceBannerCustom">
+                                    <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+                                </div>
+                                <div className="textBannerCustom">
+                                    <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                                </div>
+                            </div>
+
+                            <div className="infoBarBanner">
+                                <div className="nameBarBanner">
+                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+
+                                    <div className="lineBarBanner"/>
+                                </div> 
+                                <div className="textBarBanner">
+                                    <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
+                                </div>
+                            </div>
+
+
+                            <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+                        </div>
+                    ))}
+                
             </Slider>
+            
         </>
     );
 };
