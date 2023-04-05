@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Slider, { ResponsiveObject } from 'react-slick';
+import { useMediaQuery } from 'react-responsive' 
 
 import "./BannerSlider.scss"
 
@@ -39,6 +40,8 @@ export default function BannerSlider({
 }: Props) {
 
     console.log("games children",children)
+
+    const isTabletScreen = useMediaQuery({ query: '(max-width: 825px)' })
 
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
     const [ showDotsInDevice, setShowDots ] = useState(true);
@@ -83,7 +86,7 @@ export default function BannerSlider({
     }
     const settings = {        
         dots: showDotsInDevice,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -100,43 +103,114 @@ export default function BannerSlider({
     };
 
     return (
-        <>
+        <section className="big-banner">
+          {isTabletScreen ? (
+
             <Slider {...settings}>
-                {/* {children?.length > 0 ? children : null} */}
-
-                    { children.map((item: any, index: React.Key | null | undefined)=>(
-                        <div className="containerBannerCustom">
-                            
-                            <div className="infoBanner">
-                                <div className="nameBannerCustom">
-                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
-                                </div>
-                                <div className="priceBannerCustom">
-                                    <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
-                                </div>
-                                <div className="textBannerCustom">
-                                    <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
-                                </div>
+                { children.map((item: any, index: React.Key | null | undefined)=>(
+                    <>
+                    <div className="containerBannerCustom">
+                        
+                        <div className="infoBanner">
+                            <div className="nameBannerCustom">
+                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
                             </div>
-
-                            <div className="infoBarBanner">
-                                <div className="nameBarBanner">
-                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
-
-                                    <div className="lineBarBanner"/>
-                                </div> 
-                                <div className="textBarBanner">
-                                    <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
-                                </div>
+                            <div className="priceBannerCustom">
+                                <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
                             </div>
-
-
-                            <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+                            <div className="textBannerCustom">
+                                <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                            </div>
                         </div>
-                    ))}
-                
+
+                        <img className="imageBanner" src={JSON.stringify(item.imgUrlMobile).replace(/["]/g, '')} /> 
+                    </div>
+
+                    <div className="infoBarBanner">
+                            <div className="nameBarBanner">
+                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+
+                                <div className="lineBarBanner"/>
+                            </div> 
+                            <div className="textBarBanner">
+                                <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
+                            </div>
+                        </div>
+                    </>
+                    
+                ))}
             </Slider>
-            
-        </>
-    );
+
+          ) : (
+
+            <Slider {...settings}> 
+                { children.map((item: any, index: React.Key | null | undefined)=>(
+                    <div className="containerBannerCustom">
+                        
+                        <div className="infoBanner">
+                            <div className="nameBannerCustom">
+                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                            </div>
+                            <div className="priceBannerCustom">
+                                <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+                            </div>
+                            <div className="textBannerCustom">
+                                <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                            </div>
+                        </div>
+
+                        <div className="infoBarBanner">
+                            <div className="nameBarBanner">
+                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+
+                                <div className="lineBarBanner"/>
+                            </div> 
+                            <div className="textBarBanner">
+                                <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
+                            </div>
+                        </div>
+
+                        <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+                    </div>
+                ))}
+            </Slider>
+          )}
+        </section>
+    )
+
+    // return (
+    //     <>
+    //     <Slider {...settings}>
+    //             { children.map((item: any, index: React.Key | null | undefined)=>(
+    //                 <div className="containerBannerCustom">
+                        
+    //                     <div className="infoBanner">
+    //                         <div className="nameBannerCustom">
+    //                             <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+    //                         </div>
+    //                         <div className="priceBannerCustom">
+    //                             <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+    //                         </div>
+    //                         <div className="textBannerCustom">
+    //                             <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+    //                         </div>
+    //                     </div>
+
+    //                     <div className="infoBarBanner">
+    //                         <div className="nameBarBanner">
+    //                             <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+
+    //                             <div className="lineBarBanner"/>
+    //                         </div> 
+    //                         <div className="textBarBanner">
+    //                             <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
+    //                         </div>
+    //                     </div>
+
+    //                     <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+    //                 </div>
+    //             ))}
+    //     </Slider>
+    //     </>
+    // );
 };

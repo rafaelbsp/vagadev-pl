@@ -56,8 +56,8 @@ function App() {
           },
         ]}
         className="carrousel-images"
-        slidesToShow={1}
-        slidesToScroll={1}
+        slidesToShow={2}
+        slidesToScroll={2}
         autoplaySpeed={0}
         speed={0}
         infinite={true}
@@ -66,7 +66,7 @@ function App() {
         centerPadding="60px"
         usePagination={false}
         showNavigationArrows="always"
-        showPaginationDots="always"
+        showPaginationDots="never"
         nextArrow={arrowBannerRight}
         prevArrow={arrowBannerLeft}
       >

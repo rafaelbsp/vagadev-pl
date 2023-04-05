@@ -18,7 +18,18 @@
         justify-content: center;
     
         width: 100%;
-        gap: 30px;
+        gap: 35px;
+        
+        @media (max-width: 375px) {
+            gap: 15px;
+        }
+
+        .logo-n1 {
+            @media (max-width: 576px) {
+                width: 107px;
+                height: 23px;
+            }
+        }
     }
 
     .miniCart-button {
@@ -63,6 +74,11 @@
 
         border-right: 1px solid #fff;
         border-left: 1px solid #fff;
+
+        @media (max-width: 576px) {
+            border: none;
+            padding: 0;
+        }
     }
 
     span {

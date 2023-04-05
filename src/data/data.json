@@ -4,6 +4,7 @@
         "game": "Mortal Combat",
         "price": 299.99,
         "imgUrl": "/imgs/banner_mortal.png",
+        "imgUrlMobile": "/imgs/banner_mobile_mortal.png",
         "textGame": "Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova. Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a estratégia como o estilo de luta."
     },
     {   
@@ -11,6 +12,7 @@
         "game": "Red Dead Redemption",
         "price": 399.99,
         "imgUrl": "/imgs/banner_red.png",
+        "imgUrlMobile": "/imgs/banner_mobile_red.png",
         "textGame": "Red Dead Redemption combina uma apresentação cinemática única com uma jogabilidade totalmente nova."
     }
 ]

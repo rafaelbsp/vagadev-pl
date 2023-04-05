@@ -6,39 +6,72 @@ import iconCart from '../../assets/svgs/shopping-bag-solid.svg'
 import iconContato from '../../assets/svgs/paper-plane.svg'
 import iconBusca from '../../assets/svgs/search-solid.svg'
 
+import { useMediaQuery } from 'react-responsive' 
 import "./Navbar.scss"
 
 const Navbar = () => {
-  return (
-    <nav className="nav-container">
-        
-        <div className="nav-subContainer">
-            <img src={iconBurguerDesktop} className="icon-burguer" alt="Icon burguer" />
 
-            <a href='/' >
-                <img src={n1logo} className="logo-n1" alt="N1 logo" />
-            </a>
-        </div>
+    const isMobileScreen = useMediaQuery({ query: '(max-width: 576px)' })
+    
+    return (
+        <section className="big-banner">
+          {isMobileScreen ? (
+            <nav className="nav-container">
+                <div className="nav-subContainer">
+                    <img src={iconBurguerDesktop} className="icon-burguer" alt="Icon burguer" />
 
-        <div className="nav-subContainer">
+                    <a href='/' >
+                        <img src={n1logo} className="logo-n1" alt="N1 logo" />
+                    </a>
+                </div>
 
-            <a className="nav-link" href='/contato' >
-                <img src={iconContato} className="icon-contato" alt="Icon contato" />
-                <span>Contato</span>
-            </a>
+                <div className="nav-subContainer">
 
-            <div className="nav-search">
-                <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
-                <span>Buscar</span>
-            </div>
+                <a className="nav-link" href='/contato' >
+                    <img src={iconContato} className="icon-contato" alt="Icon contato" />
+                </a>
 
-            <button className="miniCart-button" >
-                <img src={iconCart} className="icon-cart" alt="Icon cart" />
-                <span>2</span>
-            </button>
-        </div>
-    </nav>
-  )
+                <div className="nav-search">
+                    <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
+                </div>
+
+                <button className="miniCart-button" >
+                    <img src={iconCart} className="icon-cart" alt="Icon cart" />
+                    <span>2</span>
+                </button>
+                </div>
+            </nav>
+          ) : (
+            <nav className="nav-container">
+                <div className="nav-subContainer">
+                    <img src={iconBurguerDesktop} className="icon-burguer" alt="Icon burguer" />
+
+                    <a href='/' >
+                        <img src={n1logo} className="logo-n1" alt="N1 logo" />
+                    </a>
+                </div>
+
+                <div className="nav-subContainer">
+
+                <a className="nav-link" href='/contato' >
+                    <img src={iconContato} className="icon-contato" alt="Icon contato" />
+                    <span>Contato</span>
+                </a>
+
+                <div className="nav-search">
+                    <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
+                    <span>Buscar</span>
+                </div>
+
+                <button className="miniCart-button" >
+                    <img src={iconCart} className="icon-cart" alt="Icon cart" />
+                    <span>2</span>
+                </button>
+                </div>
+            </nav>
+          )}
+        </section>
+    )
 }
 
 export default Navbar
