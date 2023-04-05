@@ -48,6 +48,8 @@ export default function CategorySelector( ) {
                         <div className="subContainerCardCategoryCustom" key={index}>
                             
                             <div className="cardCategoryCustom">
+
+                                <div>{index}</div>
                                 <img src={game.thumbnail} className="imageCardCategory" />
                             </div>
 
