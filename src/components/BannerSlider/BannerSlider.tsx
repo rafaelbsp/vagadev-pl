@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Slider, { ResponsiveObject } from 'react-slick';
 import { useMediaQuery } from 'react-responsive' 
 
@@ -41,6 +41,8 @@ export default function BannerSlider({
 
     console.log("games children",children)
 
+    const sliderRef = React.useRef();
+    
     const isTabletScreen = useMediaQuery({ query: '(max-width: 825px)' })
 
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
@@ -60,28 +62,34 @@ export default function BannerSlider({
         }
     }, [isMobile, showNavigationArrows, showPaginationDots]);
 
-    function SampleNextArrow({ className, style, onClick }: PropsSlickArrow) {
+    function SampleNextArrow({ className, style, onClick}: PropsSlickArrow) {
         return (
-            <img
-                src={nextArrow}
-                className={className}
-                style={{ ...style }}
-                onClick={onClick}
-                onKeyDown={()=>{}}
-                alt={"nextArrow"}
-            />
+            <>
+                <img
+                    src={nextArrow}
+                    className={className}
+                    style={{ ...style }}
+                    onClick={()=>{}}
+                    onKeyDown={()=>{}}
+                    alt={"nextArrow"}
+                />
+            </>
+            
         );
     }
-    function SamplePrevArrow({ className, style, onClick }: PropsSlickArrow) {
+    function SamplePrevArrow({ className, style, onClick}: PropsSlickArrow) {
         return (
-            <img
-                src={prevArrow}
-                className={className}
-                style={{ ...style }}
-                onClick={onClick}
-                onKeyDown={()=>{}}
-                alt={"prevArrow"}
-            />
+            <>
+                <img
+                    src={prevArrow}
+                    className={className}
+                    style={{ ...style }}
+                    onClick={()=>{}}
+                    onKeyDown={()=>{}}
+                    alt={"prevArrow"}
+                />
+            </>
+            
         );
     }
     const settings = {        
@@ -127,6 +135,7 @@ export default function BannerSlider({
                     </div>
 
                     <div className="infoBarBanner">
+                            
                             <div className="nameBarBanner">
                                 <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
 
@@ -142,38 +151,45 @@ export default function BannerSlider({
             </Slider>
 
           ) : (
+            <>
+                <Slider {...settings}> 
+                    { children.map((item: any, index: React.Key | null | undefined)=>(
+                        <div className="containerBannerCustom">
+                            
+                            <div className="infoBanner">
+                                <div className="nameBannerCustom">
+                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                                </div>
+                                <div className="priceBannerCustom">
+                                    <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+                                </div>
+                                <div className="textBannerCustom">
+                                    <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                                </div>
+                            </div>
 
-            <Slider {...settings}> 
-                { children.map((item: any, index: React.Key | null | undefined)=>(
-                    <div className="containerBannerCustom">
-                        
-                        <div className="infoBanner">
-                            <div className="nameBannerCustom">
-                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
-                            </div>
-                            <div className="priceBannerCustom">
-                                <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
-                            </div>
-                            <div className="textBannerCustom">
-                                <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
-                            </div>
+                            <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
                         </div>
+                    ))}
 
-                        <div className="infoBarBanner">
-                            <div className="nameBarBanner">
-                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                </Slider>
+                <div className="infoBarBanner">
+                    
+                    <div className="nameBarBanner">
+                        <p>teste</p>
 
-                                <div className="lineBarBanner"/>
-                            </div> 
-                            <div className="textBarBanner">
-                                <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
-                            </div>
-                        </div>
-
-                        <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+                        <div className="lineBarBanner"/>
+                    </div> 
+                    {/* <div className="infoBarBannerteste"> 
+                        <SamplePrevArrow onClick={()=>sliderRef?.current?.slickPrev()}/>
+                        <SampleNextArrow />
+                    </div> */}
+                    <div className="textBarBanner">
+                        <div className="pageActiveBarBanner">1 / 2</div>
                     </div>
-                ))}
-            </Slider>
+                    
+                </div>
+            </>
           )}
         </section>
     )

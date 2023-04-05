@@ -14,7 +14,7 @@ const Navbar = () => {
     const isMobileScreen = useMediaQuery({ query: '(max-width: 576px)' })
     
     return (
-        <section className="big-banner">
+        <section className="navbar">
           {isMobileScreen ? (
             <nav className="nav-container">
                 <div className="nav-subContainer">
