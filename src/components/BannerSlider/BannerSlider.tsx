@@ -39,8 +39,6 @@ export default function BannerSlider({
     prevArrow = ""
 }: Props) {
 
-    console.log("games children",children)
-
     const sliderRef = React.useRef();
     
     const isTabletScreen = useMediaQuery({ query: '(max-width: 825px)' })
@@ -69,7 +67,7 @@ export default function BannerSlider({
                     src={nextArrow}
                     className={className}
                     style={{ ...style }}
-                    onClick={()=>{}}
+                    onClick={onClick}
                     onKeyDown={()=>{}}
                     alt={"nextArrow"}
                 />
@@ -84,7 +82,7 @@ export default function BannerSlider({
                     src={prevArrow}
                     className={className}
                     style={{ ...style }}
-                    onClick={()=>{}}
+                    onClick={onClick}
                     onKeyDown={()=>{}}
                     alt={"prevArrow"}
                 />
@@ -121,28 +119,28 @@ export default function BannerSlider({
                         
                         <div className="infoBanner">
                             <div className="nameBannerCustom">
-                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                                <p>{item.game}</p>
                             </div>
                             <div className="priceBannerCustom">
-                                <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+                                <p>{item.price}</p>
                             </div>
                             <div className="textBannerCustom">
-                                <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                                <p>{item.textGame}</p>
                             </div>
                         </div>
 
-                        <img className="imageBanner" src={JSON.stringify(item.imgUrlMobile).replace(/["]/g, '')} /> 
+                        <img className="imageBanner" src={item.imgUrlMobile} /> 
                     </div>
 
                     <div className="infoBarBanner">
                             
                             <div className="nameBarBanner">
-                                <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                                <p>{item.game}</p>
 
                                 <div className="lineBarBanner"/>
                             </div> 
                             <div className="textBarBanner">
-                                <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
+                                <div className="pageActiveBarBanner">{item.id} / 2</div>
                             </div>
                         </div>
                     </>
@@ -153,22 +151,22 @@ export default function BannerSlider({
           ) : (
             <>
                 <Slider {...settings}> 
-                    { children.map((item: any, index: React.Key | null | undefined)=>(
+                    { children?.map((item: any, index: React.Key | null | undefined)=>(
                         <div className="containerBannerCustom">
                             
                             <div className="infoBanner">
                                 <div className="nameBannerCustom">
-                                    <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
+                                    <p>{item.game}</p>
                                 </div>
                                 <div className="priceBannerCustom">
-                                    <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
+                                    <p>{item.price}</p>
                                 </div>
                                 <div className="textBannerCustom">
-                                    <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
+                                    <p>{item.textGame}</p>
                                 </div>
                             </div>
 
-                            <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
+                            <img className="imageBanner" src={item.imgUrl} /> 
                         </div>
                     ))}
 
@@ -180,11 +178,9 @@ export default function BannerSlider({
 
                         <div className="lineBarBanner"/>
                     </div> 
-                    {/* <div className="infoBarBannerteste"> 
-                        <SamplePrevArrow onClick={()=>sliderRef?.current?.slickPrev()}/>
-                        <SampleNextArrow />
-                    </div> */}
                     <div className="textBarBanner">
+                        <SamplePrevArrow/>
+                        <SampleNextArrow/>
                         <div className="pageActiveBarBanner">1 / 2</div>
                     </div>
                     
@@ -229,4 +225,5 @@ export default function BannerSlider({
     //     </Slider>
     //     </>
     // );
+
 };

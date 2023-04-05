@@ -1,0 +1,20 @@
+.categoryCustom {
+
+  .containerCategoryCustom {
+    display: flex;
+    flex-direction: column;
+
+
+    .titleCategoryCustom {
+
+    }
+
+    .containerCardCategoryCustom {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+
+  }
+}

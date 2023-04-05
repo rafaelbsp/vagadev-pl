@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import BannerSlider from './components/BannerSlider/BannerSlider'
 import CardsGames from './components/CardsGames/CardsGames'
+import CategorySelector from './components/CategorySelector/CategorySelector'
 
 // import { Routes, Route } from 'react-router-dom'
 // import Contato from './Pages/contato'
@@ -23,7 +24,37 @@ function App() {
   //   <img src={bannerRed} key="img2" alt="slider02" />,
   // ]
 
-  const dataGames = games;
+  const arryBrandImages = [
+    <div className='brandContainer'>
+      <img src="/BrandSlider/colcci.png" key={'imgbrand1'} alt="sliderbrand01" />
+      <span>Colcci</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/myshoes.png" key={'imgbrand2'} alt="sliderbrand02" />
+      <span>My shoes</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/aramis.png" key={'imgbrand3'} alt="sliderbrand03" />
+      <span>My shoes</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/aramis.png" key={'imgbrand4'} alt="sliderbrand04" />
+      <span>My shoes</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/vizzano.png" key={'imgbrand5'} alt="sliderbrand05" />
+      <span>My shoes</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/nike.png" key={'imgbrand6'} alt="sliderbrand06" />
+      <span>My shoes</span>
+    </div>,
+    <div className='brandContainer'>
+      <img src="/BrandSlider/colcci.png" key={'imgbrand7'} alt="sliderbrand07" />
+      <span>My shoes</span>
+    </div>    
+  ]
+
 
   return (
     <>
@@ -62,7 +93,7 @@ function App() {
         speed={0}
         infinite={true}
         autoplay
-        centerMode={false}
+        centerMode={true}
         centerPadding="60px"
         usePagination={false}
         showNavigationArrows="always"
@@ -70,12 +101,12 @@ function App() {
         nextArrow={arrowBannerRight}
         prevArrow={arrowBannerLeft}
         >
-          {dataGames}
+          {games}
         </BannerSlider>
       
-      
         <CardsGames/>
-      
+
+        <CategorySelector/>
 
         {/* <Routes>
           <Route path='/' element={<Home/>} />
