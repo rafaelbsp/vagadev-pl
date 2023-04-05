@@ -1,0 +1,67 @@
+.cardsContainer {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // @media (max-width: 1300px) {
+    //     flex-direction: column;
+    // }
+
+    .cardsPositionContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        top: -145px;
+
+        @media (max-width: 1300px) {
+            flex-direction: column;
+            position: initial;
+        }
+
+        .cardSubContainer { 
+            display: flex;
+            flex-direction: column;
+            
+            .cardImage {
+    
+            }
+    
+            .cardContainerBar {
+    
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+    
+                gap: 45px;
+                padding: 0 15px;
+                height: 60px;
+    
+                background: #3EC6E0;
+                border-left: 11px solid #084154;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+    
+                .cardBarName {
+                    font-family: "Roboto";
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 19px;
+                    letter-spacing: 0em;
+                    color: #084154;
+                }
+    
+                .cardBarLine {
+                    border: 1px solid #084154;
+                    max-width: 248px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
