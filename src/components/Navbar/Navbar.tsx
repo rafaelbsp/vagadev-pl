@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import n1logo from '../../assets/svgs/Logo_N1.svg'
 import iconBurguerDesktop from '../../assets/svgs/icon_hamburguer.svg'
@@ -7,12 +7,20 @@ import iconContato from '../../assets/svgs/paper-plane.svg'
 import iconBusca from '../../assets/svgs/search-solid.svg'
 
 import { useMediaQuery } from 'react-responsive' 
+
+import { useShoppingCart } from '../../context/ShoppingCartContext'
+
 import "./Navbar.scss"
+import Minicart from '../Minicart/Minicart'
 
 const Navbar = () => {
 
     const isMobileScreen = useMediaQuery({ query: '(max-width: 576px)' })
-    
+
+    const { cartQuantity } = useShoppingCart()
+
+    const [showDrawer, setShowDrawer] = useState(false);
+
     return (
         <section className="navbar">
           {isMobileScreen ? (
@@ -53,20 +61,25 @@ const Navbar = () => {
 
                 <div className="nav-subContainer">
 
-                <a className="nav-link" href='/contato' >
-                    <img src={iconContato} className="icon-contato" alt="Icon contato" />
-                    <span>Contato</span>
-                </a>
+                    <a className="nav-link" href='/contato' >
+                        <img src={iconContato} className="icon-contato" alt="Icon contato" />
+                        <span>Contato</span>
+                    </a>
 
-                <div className="nav-search">
-                    <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
-                    <span>Buscar</span>
-                </div>
+                    <div className="nav-search">
+                        <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
+                        <span>Buscar</span>
+                    </div>
 
-                <button className="miniCart-button" >
-                    <img src={iconCart} className="icon-cart" alt="Icon cart" />
-                    <span>2</span>
-                </button>
+                    <button className="miniCart-button" onClick={() => { setShowDrawer(!showDrawer) }}>
+                        <img src={iconCart} className="icon-cart" alt="Icon cart" />
+
+                        {cartQuantity > 0 && (
+                            <span>{cartQuantity}</span> 
+                        )}
+                    </button>
+
+                    <Minicart />
                 </div>
             </nav>
           )}

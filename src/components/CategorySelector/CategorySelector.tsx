@@ -9,15 +9,8 @@ import "./CategorySelector.scss"
 export default function CategorySelector( ) {
 
     const [ dataGames, setDataGames ] = useState([]);
-    const [ category, setCategory ] = useState("shooter");
+    const [ category, setCategory ] = useState("pvp");
     const [openDrop, setOpenDrop] = useState(false);
-
-    // console.log("category", category)
-
-    // const [ teste, setTeste ] = useState("shooter");
-
-    // console.log("teste", teste)
-
 
     useEffect(() => {
 
@@ -30,8 +23,6 @@ export default function CategorySelector( ) {
                 'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
             }
         };
-
-        console.log("options.params.category", options.params.category)
 
         axios.request(options).then(function (response) {
 
