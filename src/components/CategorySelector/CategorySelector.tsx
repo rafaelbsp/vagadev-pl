@@ -59,14 +59,25 @@ export default function CategorySelector( ) {
                         </div>
 
                         {openDrop && (
-                            <div>
-                                <button onClick={() => setCategory("pvp")}>
+                            <div className="containerCategoryOptions">
+                                <button onClick={() => {
+                                    setCategory("pvp");
+                                    setOpenDrop(false)
+                                }} className="categoryOptions">
                                     PVP
                                 </button>
-                                <button onClick={() => setCategory("shooter")}>
+
+                                <button onClick={() => {
+                                    setCategory("shooter");
+                                    setOpenDrop(false)
+                                }} className="categoryOptions">
                                     Shooter
                                 </button>
-                                <button onClick={() => setCategory("mmorpg")}>
+
+                                <button onClick={() => {
+                                    setCategory("mmorpg");
+                                    setOpenDrop(false)
+                                }} className="categoryOptions">
                                     Mmorpg
                                 </button>
                             </div>
