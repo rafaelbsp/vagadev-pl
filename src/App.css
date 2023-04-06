@@ -7,7 +7,7 @@
 }
 
 body {
-  background: blue;
+  background: #fff;
   color: #000;
 }
 
@@ -16,19 +16,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.card {
-  background: red;
-
-}
-
-.textocard {
- 
-  color: blue;
-}
-
-
-
 
 
 

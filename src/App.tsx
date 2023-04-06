@@ -24,36 +24,36 @@ function App() {
   //   <img src={bannerRed} key="img2" alt="slider02" />,
   // ]
 
-  const arryBrandImages = [
-    <div className='brandContainer'>
-      <img src="/BrandSlider/colcci.png" key={'imgbrand1'} alt="sliderbrand01" />
-      <span>Colcci</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/myshoes.png" key={'imgbrand2'} alt="sliderbrand02" />
-      <span>My shoes</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/aramis.png" key={'imgbrand3'} alt="sliderbrand03" />
-      <span>My shoes</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/aramis.png" key={'imgbrand4'} alt="sliderbrand04" />
-      <span>My shoes</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/vizzano.png" key={'imgbrand5'} alt="sliderbrand05" />
-      <span>My shoes</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/nike.png" key={'imgbrand6'} alt="sliderbrand06" />
-      <span>My shoes</span>
-    </div>,
-    <div className='brandContainer'>
-      <img src="/BrandSlider/colcci.png" key={'imgbrand7'} alt="sliderbrand07" />
-      <span>My shoes</span>
-    </div>    
-  ]
+  // const arryBrandImages = [
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/colcci.png" key={'imgbrand1'} alt="sliderbrand01" />
+  //     <span>Colcci</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/myshoes.png" key={'imgbrand2'} alt="sliderbrand02" />
+  //     <span>My shoes</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/aramis.png" key={'imgbrand3'} alt="sliderbrand03" />
+  //     <span>My shoes</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/aramis.png" key={'imgbrand4'} alt="sliderbrand04" />
+  //     <span>My shoes</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/vizzano.png" key={'imgbrand5'} alt="sliderbrand05" />
+  //     <span>My shoes</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/nike.png" key={'imgbrand6'} alt="sliderbrand06" />
+  //     <span>My shoes</span>
+  //   </div>,
+  //   <div className='brandContainer'>
+  //     <img src="/BrandSlider/colcci.png" key={'imgbrand7'} alt="sliderbrand07" />
+  //     <span>My shoes</span>
+  //   </div>    
+  // ]
 
 
   return (
