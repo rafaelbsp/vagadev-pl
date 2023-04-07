@@ -21,7 +21,7 @@
     .containerMiniCartItem {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         border-bottom: 1px solid #084154;
         margin: 0 10px;
 
@@ -37,10 +37,11 @@
             }
         
             .miniCartItemData {
-                
+
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+                min-width: 100px;
 
                 .miniCartItemName {
                     font-family: "Roboto";
@@ -64,9 +65,19 @@
                 .miniCartItemQuantity  {
                     display: flex;
                     flex-direction: row;
-
+                    align-items: center;
+                    justify-content: space-evenly;
                     span {
     
+                    }
+
+                    button {
+                        background-color: #084154;
+                        color: #fff;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 15px;
+                        border: none;
                     }
                 }
             }

@@ -12,7 +12,7 @@ function CardsGames() {
                     <img className="cardImage" src={bannerZelda}/>
 
                     <div className="cardContainerBar">
-                        <p className="cardBarName"> The Legend of Zelda - Breath of th wild </p>
+                        <p className="cardBarName"> The Legend of Zelda - Breath of the wild </p>
                         <div className="cardBarLine"></div>
                     </div>
                 </div>
