@@ -10,6 +10,8 @@ import { ShoppingCartProvider } from './context/ShoppingCartContext'
 
 import arrowBannerRight from './assets/svgs/angle-right-solid.svg'
 import arrowBannerLeft from './assets/svgs/angle-left-solid.svg'
+import arrowBannerRightGreen from './assets/svgs/angle-right-solid-green.svg'
+import arrowBannerLeftGreen from './assets/svgs/angle-left-solid-green.svg'
 
 import games from "./data/data.json"
 
@@ -66,7 +68,37 @@ function App() {
 
           <CardsGames/> 
 
-          <ProductShelf/>
+          <ProductShelf
+            responsive={[
+              {
+                breakpoint: 425,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  centerMode: false,
+                  dots: true,
+                  arrows: true,
+                },
+              },
+            ]}
+            className="carrousel-images"
+            slidesToShow={2}
+            slidesToScroll={2}
+            autoplaySpeed={0}
+            speed={0}
+            infinite={true}
+            autoplay
+            centerMode={true}
+            centerPadding="60px"
+            usePagination={false}
+            showNavigationArrows="always"
+            showPaginationDots="never"
+            nextArrow={arrowBannerRightGreen}
+            prevArrow={arrowBannerLeftGreen}
+          >
+            {games}
+          </ProductShelf>
 
           <CategorySelector/>
         </ShoppingCartProvider>

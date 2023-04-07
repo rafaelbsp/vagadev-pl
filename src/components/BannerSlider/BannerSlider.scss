@@ -25,7 +25,6 @@
   .slick-list {
     position: relative;
     display: block;
-    // width: calc(100% - 80px);
     margin: 0 auto;
     overflow: hidden;
 
@@ -43,8 +42,6 @@
   }
 
   .slick-dots {
-
-    // display: none;
 
     position: absolute;
     right: 0;
@@ -101,14 +98,13 @@
   height: 840px;
   display: flex !important;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
 
   .infoBanner {
-    position: inherit;
+
     z-index: 99;
     text-align: end;
-    right: 530px;
-    bottom: 60px;
+    padding: 0 0 0 30%;
 
     @media (max-width: 1200px){
       left: 215px;

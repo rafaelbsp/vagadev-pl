@@ -7,12 +7,12 @@ import "./Minicart.scss"
 import { useState } from 'react';
 
 interface MiniCartProps {
-    isOpen: boolean //
+    isOpen: boolean 
 }
 
 function Minicart({ isOpen }: MiniCartProps) {
 
-    const { cartItems, closeCart, openCart } = useShoppingCart()
+    const { cartItems, closeCart } = useShoppingCart()
 
     return (
         <>  

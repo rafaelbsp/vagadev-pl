@@ -190,40 +190,4 @@ export default function BannerSlider({
         </section>
     )
 
-    // return (
-    //     <>
-    //     <Slider {...settings}>
-    //             { children.map((item: any, index: React.Key | null | undefined)=>(
-    //                 <div className="containerBannerCustom">
-                        
-    //                     <div className="infoBanner">
-    //                         <div className="nameBannerCustom">
-    //                             <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
-    //                         </div>
-    //                         <div className="priceBannerCustom">
-    //                             <p>{JSON.stringify(item.price).replace(/["]/g, '')}</p>
-    //                         </div>
-    //                         <div className="textBannerCustom">
-    //                             <p>{JSON.stringify(item.textGame).replace(/["]/g, '')}</p>
-    //                         </div>
-    //                     </div>
-
-    //                     <div className="infoBarBanner">
-    //                         <div className="nameBarBanner">
-    //                             <p>{JSON.stringify(item.game).replace(/["]/g, '')}</p>
-
-    //                             <div className="lineBarBanner"/>
-    //                         </div> 
-    //                         <div className="textBarBanner">
-    //                             <div className="pageActiveBarBanner">{JSON.stringify(item.id)} / 2</div>
-    //                         </div>
-    //                     </div>
-
-    //                     <img className="imageBanner" src={JSON.stringify(item.imgUrl).replace(/["]/g, '')} /> 
-    //                 </div>
-    //             ))}
-    //     </Slider>
-    //     </>
-    // );
-
 };

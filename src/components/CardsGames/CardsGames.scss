@@ -5,10 +5,7 @@
     justify-content: center;
     align-items: center;
     min-height: 300px;
-    
-    // @media (max-width: 1300px) {
-    //     flex-direction: column;
-    // }
+    margin: 30px 0;
 
     .cardsPositionContainer {
         display: flex;
@@ -27,9 +24,21 @@
         .cardSubContainer { 
             display: flex;
             flex-direction: column;
-            
+
             .cardImage {
-    
+                
+                
+                @media (max-width: 700px) {
+                    width: 500px;
+                }
+                
+                @media (max-width: 576px) {
+                    width: 375px;
+                }
+
+                @media (max-width: 375px) {
+                    width: 340px;
+                }
             }
     
             .cardContainerBar {
@@ -54,12 +63,21 @@
                     line-height: 19px;
                     letter-spacing: 0em;
                     color: #084154;
+
+                    @media (max-width: 576px) {
+                        font-size: 12px;
+                    }
                 }
     
                 .cardBarLine {
                     border: 1px solid #084154;
                     max-width: 248px;
                     width: 100%;
+
+                    @media (max-width: 576px) {
+                        max-width: 72px;
+                    }
+
                 }
             }
         }
