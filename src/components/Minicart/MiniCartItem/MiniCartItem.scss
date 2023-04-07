@@ -37,7 +37,11 @@
             }
         
             .miniCartItemData {
-        
+                
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
                 .miniCartItemName {
                     font-family: "Roboto";
                     font-size: 16px;
@@ -54,10 +58,13 @@
                     line-height: 16px;
                     letter-spacing: 0em;
                     color: #084154;
+
                 }
     
                 .miniCartItemQuantity  {
-    
+                    display: flex;
+                    flex-direction: row;
+
                     span {
     
                     }

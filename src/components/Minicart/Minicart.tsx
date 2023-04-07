@@ -1,34 +1,32 @@
 import { useShoppingCart } from '../../context/ShoppingCartContext'
 import MiniCartItem from './MiniCartItem/MiniCartItem';
 import closeIcon from '../../assets/svgs/closeIcon.svg'
+import { PRODUCTS } from '../../data/products'
 
 import "./Minicart.scss"
 import { useState } from 'react';
 
 interface MiniCartProps {
-    openMinicart: boolean //
+    isOpen: boolean //
 }
 
-function Minicart({ openMinicart }: MiniCartProps) {
+function Minicart({ isOpen }: MiniCartProps) {
 
-    const { cartItems } = useShoppingCart()
-
-    const [close, setClose] = useState(openMinicart);
+    const { cartItems, closeCart, openCart } = useShoppingCart()
 
     return (
         <>  
-                        {/* MEU ESTADO AQUI */}
-            <div className={ openMinicart ? "containerMinicart MenuDrawerShown" : "containerMinicart MenuDrawerHidden" }>
+            <div className={ isOpen ? "containerMinicart MenuDrawerShown" : "containerMinicart MenuDrawerHidden" }>
 
                 <div> 
-                    <div className="containerTitleMinicart" onClick={() => { setClose(!openMinicart) }}> 
+                    <div className="containerTitleMinicart" onClick={closeCart}> 
                         <img src={closeIcon}  className="closeIcon"/>
 
                         <span>Meu Carrinho</span>
                     </div>
                     <div className="containerMinicartItens">
                         {cartItems.map(item => (
-                            <MiniCartItem key={item.id} {...item}  />
+                            <MiniCartItem key={item.id} {...item} />
                         ))}
                     </div>
                 </div>
@@ -38,19 +36,29 @@ function Minicart({ openMinicart }: MiniCartProps) {
                         Total:
                     </div>
                     <div className="valueTotalCart">
-                        200000
+                        {
+                            cartItems.reduce((total, cartItem) => {
+                                const item = PRODUCTS.find(i => i.id === cartItem.id)
+                                return total + (item?.price || 0) * cartItem.quantity
+                            }, 0).toLocaleString(
+                                "pt-BR", {
+                                  style: "currency",
+                                  currency: "BRL",
+                                }
+                            )
+                        }
                     </div>
                 </div>
 
             </div>
 
-            {/* {showDrawer && (
+            {isOpen && (
                 <div
-                    className={styles.MenuDrawerOverlay}
-                    onClick={() => setShowDrawer(false)}
+                    className="MenuDrawerOverlay"
+                    onClick={closeCart}
                     aria-hidden="true"
                 />
-            )} */}
+            )}
         </>
     )
 }

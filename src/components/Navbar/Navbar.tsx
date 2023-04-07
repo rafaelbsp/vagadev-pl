@@ -17,11 +17,7 @@ const Navbar = () => {
 
     const isMobileScreen = useMediaQuery({ query: '(max-width: 576px)' })
 
-    const { cartQuantity } = useShoppingCart()
-
-    const [showDrawer, setShowDrawer] = useState(false);
-
-    console.log("Navbar openMinicart showDrawer ", showDrawer);
+    const { cartQuantity, openCart } = useShoppingCart()
 
     return (
         <section className="navbar">
@@ -72,7 +68,7 @@ const Navbar = () => {
                         <span>Buscar</span>
                     </div>
 
-                    <button className="miniCart-button" onClick={() => { setShowDrawer(!showDrawer) }}>
+                    <button className="miniCart-button" onClick={openCart}>
                         <img src={iconCart} className="icon-cart" alt="Icon cart" />
 
                         {cartQuantity > 0 && (
@@ -82,7 +78,7 @@ const Navbar = () => {
                     
                 </div>
 
-                <Minicart openMinicart={showDrawer} />
+                
             </nav>
           )}
         </section>

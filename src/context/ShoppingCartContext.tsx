@@ -98,6 +98,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }}
     >
       {children}
+
+      <Minicart isOpen={isOpen} />
     </ShoppingCartContext.Provider>
   )
 }

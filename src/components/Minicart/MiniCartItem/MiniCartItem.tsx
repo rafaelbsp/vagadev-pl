@@ -12,13 +12,15 @@ interface MiniItemCartProps {
 
 function MinicartItem({ id, quantity }: MiniItemCartProps) {
 
-  const { removeFromCart } = useShoppingCart()
+  const {
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart()
   
   const item = PRODUCTS.find(i => i.id === id)
 
   if (item == null) return null
-
-  // const multiplyer = item.price * quantity
 
   return (
     <section className="containerMiniCartItem">
@@ -33,15 +35,6 @@ function MinicartItem({ id, quantity }: MiniItemCartProps) {
             {item.productName}{" "}
           </div>
 
-          <div className="miniCartItemQuantity">
-
-            {quantity > 1 && (
-              <span className="miniCartItemQuantityNumber">
-                x{quantity}
-              </span>
-            )}
-          </div>
-
           <div className="miniCartItemPrice" >
             {item.price.toLocaleString(
               "pt-BR", {
@@ -49,6 +42,14 @@ function MinicartItem({ id, quantity }: MiniItemCartProps) {
                 currency: "BRL",
               }
             )}
+          </div>
+
+          <div className="miniCartItemQuantity" >
+              <button onClick={() => decreaseCartQuantity(item.id)}>-</button>
+                <div>
+                  <span className="miniCartItemQuantityNumber">{quantity}</span>
+                </div>
+              <button onClick={() => increaseCartQuantity(item.id)}>+</button>
           </div>
               
         </div>
