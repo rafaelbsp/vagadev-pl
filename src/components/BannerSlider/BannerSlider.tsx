@@ -35,16 +35,20 @@ export default function BannerSlider({
     children,
     showNavigationArrows ,
     showPaginationDots,
-    nextArrow = "",
-    prevArrow = ""
+    nextArrow,
+    prevArrow,
 }: Props) {
 
-    const sliderRef = React.useRef();
+    const slider:any = useRef(null);
     
     const isTabletScreen = useMediaQuery({ query: '(max-width: 768px)' })
 
+    const [ currentPage, setCurrentPage ] = useState(1);
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
     const [ showDotsInDevice, setShowDots ] = useState(true);
+
+    const [ gameName, setGameName ] = useState("MORTAL KOMBAT");
+    
     const isMobile = false;
 
     useEffect(() => {
@@ -67,11 +71,11 @@ export default function BannerSlider({
                 className={className}
                 style={{ ...style }}
                 onClick={onClick}
-                onKeyDown={()=>{}}
                 alt={"nextArrow"}
             />
         );
     }
+
     function SamplePrevArrow({ className, style, onClick}: PropsSlickArrow) {
         return (
             <img
@@ -79,17 +83,14 @@ export default function BannerSlider({
                 className={className}
                 style={{ ...style }}
                 onClick={onClick}
-                onKeyDown={()=>{}}
                 alt={"prevArrow"}
             />   
         );
     }
 
-
-
     const settings = {        
         dots: showDotsInDevice,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -101,53 +102,39 @@ export default function BannerSlider({
         autoplay: false,
         usePagination: false,
         autoplaySpeed: 0,
-        nextArrow: nextArrow !== "" ? <SampleNextArrow /> : undefined,
-        prevArrow: prevArrow !== "" ? <SamplePrevArrow /> : undefined,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
     };
 
     return (
         <section className="big-banner">
           {isTabletScreen ? (
-
-            <Slider {...settings}>
-                { children.map((item: any, index: React.Key | null | undefined)=>(
-                    <>
-                    <div className="containerBannerCustom">
-                        
-                        <div className="infoBanner">
-                            <div className="nameBannerCustom">
-                                <p>{item.game}</p>
-                            </div>
-                            <div className="priceBannerCustom">
-                                <p>{item.price}</p>
-                            </div>
-                            <div className="textBannerCustom">
-                                <p>{item.textGame}</p>
-                            </div>
-                        </div>
-
-                        <img className="imageBanner" src={item.imgUrlMobile} /> 
-                    </div>
-
-                    <div className="infoBarBanner">
+            <>
+                <Slider {...settings} ref={slider}>
+                    { children.map((item: any, index: React.Key | null | undefined)=>(
+                        <div className="containerBannerCustom">
                             
-                            <div className="nameBarBanner">
-                                <p>{item.game}</p>
-
-                                <div className="lineBarBanner"/>
-                            </div> 
-                            <div className="textBarBanner">
-                                <div className="pageActiveBarBanner">{item.id} / 2</div>
+                            <div className="infoBanner">
+                                <div className="nameBannerCustom">
+                                    <p>{item.game}</p>
+                                </div>
+                                <div className="priceBannerCustom">
+                                    <p>{item.price}</p>
+                                </div>
+                                <div className="textBannerCustom">
+                                    <p>{item.textGame}</p>
+                                </div>
                             </div>
-                        </div>
-                    </>
-                    
-                ))}
-            </Slider>
 
+                            <img className="imageBanner" src={item.imgUrlMobile} /> 
+                        </div>
+                        
+                    ))}
+                </Slider>
+            </>
           ) : (
             <>
-                <Slider {...settings}> 
+                <Slider {...settings} ref={slider}> 
                     { children?.map((item: any, index: React.Key | null | undefined)=>(
                         <div className="containerBannerCustom">
                             
@@ -171,12 +158,35 @@ export default function BannerSlider({
                 <div className="infoBarBanner">
                     
                     <div className="nameBarBanner">
-                        <p>teste</p>
-
+                        <p>{gameName}</p>
+                        
                         <div className="lineBarBanner"/>
                     </div> 
                     <div className="textBarBanner">
-                        <div className="pageActiveBarBanner">1 / 2</div>
+
+                        <div className="pageActiveBarBanner">{currentPage} / {children.length}</div>
+                        
+                        <div className="containerArrow">
+                            <button className="itemArrow"
+                                onClick={() =>{
+                                    slider.current.slickPrev();
+                                    currentPage > 1 && setCurrentPage(currentPage - 1);
+                                    setGameName("MORTAL KOMBAT")
+                                }} 
+                            >
+                                <img src={prevArrow} /> 
+                            </button>
+
+                            <button className="itemArrow"
+                                onClick={() =>{
+                                    slider.current.slickNext();
+                                    currentPage < children.length && setCurrentPage(currentPage + 1);
+                                    setGameName("RED DEAD REDEMPTION")
+                                }} 
+                            >
+                                <img src={nextArrow} /> 
+                            </button>
+                        </div>
                     </div>
                     
                 </div>

@@ -5,6 +5,7 @@ import BannerSlider from './components/BannerSlider/BannerSlider'
 import CardsGames from './components/CardsGames/CardsGames'
 import CategorySelector from './components/CategorySelector/CategorySelector'
 import ProductShelf from './components/ProductShelf/ProductShelf'
+import Footer from './components/Footer/Footer'
 
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
 
@@ -30,10 +31,10 @@ function App() {
                 settings: {
                   slidesToShow: 2,
                   slidesToScroll: 2,
-                  infinite: true,
+                  infinite: false,
                   centerMode: false,
                   dots: true,
-                  arrows: true,
+                  arrows: false,
                 },
               },
               {
@@ -41,10 +42,10 @@ function App() {
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
-                  infinite: true,
+                  infinite: false,
                   centerMode: false,
                   dots: true,
-                  arrows: true,
+                  arrows: false,
                 },
               },
             ]}
@@ -58,7 +59,7 @@ function App() {
             centerMode={true}
             centerPadding="60px"
             usePagination={false}
-            showNavigationArrows="always"
+            showNavigationArrows="never"
             showPaginationDots="mobileOnly"
             nextArrow={arrowBannerRight}
             prevArrow={arrowBannerLeft}
@@ -101,6 +102,8 @@ function App() {
           </ProductShelf>
 
           <CategorySelector/>
+
+          <Footer/>
         </ShoppingCartProvider>
       </div>
     </>

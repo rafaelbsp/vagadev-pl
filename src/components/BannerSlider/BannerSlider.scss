@@ -12,24 +12,6 @@
     right: 40px;
     z-index: 10;
     cursor: pointer;
-
-    @media (max-width: 1200px) {
-      bottom: 24%;
-    }
-
-    @media (max-width: 1025px) {
-      bottom: 14%;
-    }
-
-    @media (max-width: 992px) {
-      right: 70px;
-      bottom: -8%;
-    }
-
-    @media (max-width: 768px) {
-      right: 70px;
-      bottom: 4%;
-    }
   }
 
   .slick-next {
@@ -38,24 +20,6 @@
     bottom: 28%;
     z-index: 10;
     cursor: pointer;
-
-    @media (max-width: 1200px) {
-      bottom: 24%;
-    }
-
-    @media (max-width: 1025px) {
-      bottom: 14%;
-    }
-
-    @media (max-width: 992px) {
-      right: 50px;
-      bottom: -8%;
-    }
-
-    @media (max-width: 768px) {
-      right: 50px;
-      bottom: 4%;
-    }
   }
 
   .slick-list {
@@ -175,6 +139,7 @@
       line-height: 54px;
       letter-spacing: 0em;
       color: #fff;
+      text-align: end;
     }
     .priceBannerCustom p {
       font-family: "Roboto";
@@ -183,15 +148,12 @@
       line-height: 82px;
       letter-spacing: 0em;
       color: #3EC6E0;
+      text-align: center;
     }
 
     .textBannerCustom {
       max-width: 400px;
       margin: 0 0 0 auto;
-
-      // @media (max-width: 1200px) {
-      //   margin: 0 0 0 auto;
-      // }
 
       p {
         font-family: "Roboto";
@@ -245,6 +207,9 @@
     transform: rotate(90deg);
   }
 
+  @media (min-width: 1300px) {
+    top: 395px ;
+  }
 
   .nameBarBanner {
     display: flex;
@@ -255,7 +220,7 @@
     gap: 20px;
     text-transform: uppercase;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1300px) {
       width: 70%;
     }
 
@@ -306,12 +271,31 @@
     border-bottom-right-radius: 10px;
     width: 20%;
     display: flex;
-    padding: 10px;
+    justify-content: space-around;
     align-items: center;
 
     @media (max-width: 768px) {
       border-bottom-right-radius: 0;
       width: 30%;
+    }
+
+    .containerArrow {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      @media (min-width: 993px) {
+        transform: rotate(-90deg);
+      }
+
+      .itemArrow{
+        background: transparent;
+        border: none;
+
+        img {
+          width: 15px;
+        }
+      }
     }
 
     .pageActiveBarBanner {

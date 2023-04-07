@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "game": "Mortal Combat",
+        "game": "Mortal Kombat",
         "price": 299.99,
         "imgUrl": "/imgs/banner_mortal.png",
         "imgUrlMobile": "/imgs/banner_mobile_mortal.png",

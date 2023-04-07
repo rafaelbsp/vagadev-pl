@@ -1,0 +1,35 @@
+.containerFooter {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+
+    .columLeft {
+        background: #084154;
+        width: 30%;
+        padding: 12px 15px;
+        text-align: end;
+    }
+
+    .columRight {
+        width: 70%;
+
+        .columRightText {
+
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0em;
+
+            text-align: left;
+
+            background: #3EC6E0;
+            height: 100%;
+
+            color: #fff;
+
+            padding: 18px;
+        }
+    }
+}
