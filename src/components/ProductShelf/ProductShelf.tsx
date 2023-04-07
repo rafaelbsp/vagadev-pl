@@ -44,7 +44,7 @@ export default function ProductShelf({
     prevArrow = ""
 }: Props) {
     
-    const isTabletScreen = useMediaQuery({ query: '(max-width: 992px)' })
+    const isTabletScreen = useMediaQuery({ query: '(max-width: 1025px)' })
 
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
     const [ showDotsInDevice, setShowDots ] = useState(true);

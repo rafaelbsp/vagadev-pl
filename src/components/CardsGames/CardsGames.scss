@@ -7,6 +7,10 @@
     min-height: 300px;
     margin: 30px 0;
 
+    @media (max-width: 1300px) {
+        min-height: 210px;
+    }
+
     .cardsPositionContainer {
         display: flex;
         flex-direction: row;
@@ -16,7 +20,7 @@
         position: absolute;
         top: -145px;
 
-        @media (max-width: 1300px) {
+        @media (max-width: 1025px) {
             flex-direction: column;
             position: initial;
         }
@@ -27,8 +31,7 @@
 
             .cardImage {
                 
-                
-                @media (max-width: 700px) {
+                @media (max-width: 1300px) {
                     width: 500px;
                 }
                 

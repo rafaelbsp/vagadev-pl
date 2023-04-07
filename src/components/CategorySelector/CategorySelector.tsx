@@ -9,7 +9,7 @@ import "./CategorySelector.scss"
 export default function CategorySelector( ) {
 
     const [ dataGames, setDataGames ] = useState([]);
-    const [ category, setCategory ] = useState("pvp");
+    const [ category, setCategory ] = useState("PVP");
     const [openDrop, setOpenDrop] = useState(false);
 
     useEffect(() => {
@@ -55,7 +55,7 @@ export default function CategorySelector( ) {
                         {openDrop && (
                             <div className="containerCategoryOptions">
                                 <button onClick={() => {
-                                    setCategory("pvp");
+                                    setCategory("PVP");
                                     setOpenDrop(false)
                                 }} className="categoryOptions">
                                     PVP

@@ -32,19 +32,21 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav-subContainer">
+                    <a className="nav-link" href='/contato' >
+                        <img src={iconContato} className="icon-contato" alt="Icon contato" />
+                    </a>
 
-                <a className="nav-link" href='/contato' >
-                    <img src={iconContato} className="icon-contato" alt="Icon contato" />
-                </a>
+                    <div className="nav-search">
+                        <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
+                    </div>
 
-                <div className="nav-search">
-                    <img src={iconBusca} className="icon-busca" alt="Icon Busca" />
-                </div>
+                    <button className="miniCart-button" onClick={openCart}>
+                        <img src={iconCart} className="icon-cart" alt="Icon cart" />
 
-                <button className="miniCart-button" >
-                    <img src={iconCart} className="icon-cart" alt="Icon cart" />
-                    <span>2</span>
-                </button>
+                        {cartQuantity > 0 && (
+                            <span>{cartQuantity}</span> 
+                        )}
+                    </button>
                 </div>
             </nav>
           ) : (

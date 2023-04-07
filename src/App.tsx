@@ -59,7 +59,7 @@ function App() {
             centerPadding="60px"
             usePagination={false}
             showNavigationArrows="always"
-            showPaginationDots="never"
+            showPaginationDots="mobileOnly"
             nextArrow={arrowBannerRight}
             prevArrow={arrowBannerLeft}
           >

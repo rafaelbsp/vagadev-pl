@@ -33,15 +33,15 @@ interface PropsSlickArrow {
 
 export default function BannerSlider({
     children,
-    showNavigationArrows = "always",
-    showPaginationDots = "always",
+    showNavigationArrows ,
+    showPaginationDots,
     nextArrow = "",
     prevArrow = ""
 }: Props) {
 
     const sliderRef = React.useRef();
     
-    const isTabletScreen = useMediaQuery({ query: '(max-width: 825px)' })
+    const isTabletScreen = useMediaQuery({ query: '(max-width: 768px)' })
 
     const [ showArrowsInDevice, setShowArrows ] = useState(true);
     const [ showDotsInDevice, setShowDots ] = useState(true);
@@ -62,34 +62,31 @@ export default function BannerSlider({
 
     function SampleNextArrow({ className, style, onClick}: PropsSlickArrow) {
         return (
-            <>
-                <img
-                    src={nextArrow}
-                    className={className}
-                    style={{ ...style }}
-                    onClick={onClick}
-                    onKeyDown={()=>{}}
-                    alt={"nextArrow"}
-                />
-            </>
-            
+            <img
+                src={nextArrow}
+                className={className}
+                style={{ ...style }}
+                onClick={onClick}
+                onKeyDown={()=>{}}
+                alt={"nextArrow"}
+            />
         );
     }
     function SamplePrevArrow({ className, style, onClick}: PropsSlickArrow) {
         return (
-            <>
-                <img
-                    src={prevArrow}
-                    className={className}
-                    style={{ ...style }}
-                    onClick={onClick}
-                    onKeyDown={()=>{}}
-                    alt={"prevArrow"}
-                />
-            </>
-            
+            <img
+                src={prevArrow}
+                className={className}
+                style={{ ...style }}
+                onClick={onClick}
+                onKeyDown={()=>{}}
+                alt={"prevArrow"}
+            />   
         );
     }
+
+
+
     const settings = {        
         dots: showDotsInDevice,
         infinite: true,
@@ -179,8 +176,6 @@ export default function BannerSlider({
                         <div className="lineBarBanner"/>
                     </div> 
                     <div className="textBarBanner">
-                        <SamplePrevArrow/>
-                        <SampleNextArrow/>
                         <div className="pageActiveBarBanner">1 / 2</div>
                     </div>
                     

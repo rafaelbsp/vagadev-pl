@@ -16,7 +16,7 @@ function Minicart({ isOpen }: MiniCartProps) {
 
     return (
         <>  
-            <div className={ isOpen ? "containerMinicart MenuDrawerShown" : "containerMinicart MenuDrawerHidden" }>
+            <div className={ isOpen ? "containerMinicart CartDrawerShown" : "containerMinicart CartDrawerHidden" }>
 
                 <div> 
                     <div className="containerTitleMinicart" onClick={closeCart}> 
@@ -54,7 +54,7 @@ function Minicart({ isOpen }: MiniCartProps) {
 
             {isOpen && (
                 <div
-                    className="MenuDrawerOverlay"
+                    className="CartDrawerOverlay"
                     onClick={closeCart}
                     aria-hidden="true"
                 />

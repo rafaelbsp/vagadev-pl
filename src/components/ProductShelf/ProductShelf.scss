@@ -2,6 +2,10 @@
 .shelf-product {
 
     margin: 40px 0;
+    @media (max-width: 1200px){
+      
+      margin: 0;
+    }
 
     .carrousel-images {
         position: relative;
@@ -13,6 +17,10 @@
           left: 15px;
           z-index: 10;
           cursor: pointer;
+
+          @media (max-width: 670px){
+            left: 0;
+          }
         }
       
         .slick-next {
@@ -21,11 +29,18 @@
           bottom: 50%;
           z-index: 10;
           cursor: pointer;
+
+          @media (max-width: 670px){
+            right: 0;
+          }
         }
       
         .slick-list {
           position: relative;
-          display: block;
+          
+          display: flex;
+          justify-content: center;
+          
           margin: 0 auto;
           overflow: hidden;
       
@@ -36,8 +51,8 @@
             margin-right: auto;
             margin-left: auto;
             
-            @media (max-width:1025px) {
-              gap: 130px;
+            @media (min-width: 768px) {
+              // gap: 120px;
             }
           }
       
@@ -104,6 +119,10 @@
         width: 70%;
         margin: 0 auto;
 
+        @media (max-width: 460px){
+          width: 85%;
+        }
+
         .containerTitleShelf {
             display: flex;
             flex-direction: row;
@@ -120,6 +139,12 @@
                 letter-spacing: 0em;
                 text-align: left;
                 color: #084154;
+
+                @media (max-width: 576px) {
+                  font-size: 25px;
+                  font-weight: 300;
+                  line-height: 21px;
+                }
             }
         }
 
@@ -132,16 +157,45 @@
             .shelfCard {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-end;
 
                 box-shadow: 0px 4px 20px 7px #00000012;
                 border-radius: 10px;
 
+                @media (max-width: 1025px){
+                  margin: 20px 85px;
+                }
+
+                @media (max-width: 992px){
+                  margin: 55px;
+                }
+
+                @media (max-width: 670px){
+                  margin: 10px 30px;
+                }
+
                 .containerImage {
                     border-bottom: 2px solid #3EC6E0;
+                    text-align: center;
 
                     .imageCardCategory {
                         padding-top: 20px;
+
+                        @media (max-width: 1200px) {
+                          width: 320px;
+                        }
+
+                        @media (max-width: 1025px){
+                          width: 300px;
+                        }
+
+                        @media (max-width: 576px){
+                          width: 280px;
+                        }
+
+                        @media (max-width: 460px){
+                          width: 220px;
+                        }
                     }
                 }
 

@@ -78,9 +78,9 @@
     }
 }
 
-.MenuDrawerOverlay {
+.CartDrawerOverlay {
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     width: 100%;
     height: 100%;
     left: 0;
@@ -88,12 +88,12 @@
     background: rgba(0, 0, 0, 0.29);
 }
 
-.MenuDrawerHidden {
+.CartDrawerHidden {
     right: -100%;
     opacity: 0;
 }
 
-.MenuDrawerShown {
+.CartDrawerShown {
     right: 0;
     opacity: 1;
 }
