@@ -1,0 +1,288 @@
+
+.shelf-product {
+
+    margin: 40px 0;
+    @media (max-width: 1200px){
+      
+      margin: 0;
+    }
+
+    .carrousel-images {
+        position: relative;
+        width: 100%;
+      
+        .slick-prev {
+          position: absolute;
+          bottom: 50%;
+          left: 15px;
+          z-index: 10;
+          cursor: pointer;
+
+          @media (max-width: 670px){
+            left: 0;
+          }
+        }
+      
+        .slick-next {
+          position: absolute;
+          right: 15px;
+          bottom: 50%;
+          z-index: 10;
+          cursor: pointer;
+
+          @media (max-width: 670px){
+            right: 0;
+          }
+        }
+      
+        .slick-list {
+          position: relative;
+          
+          display: flex;
+          justify-content: center;
+          
+          margin: 0 auto;
+          overflow: hidden;
+      
+          .slick-track {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-right: auto;
+            margin-left: auto;
+            
+          }
+      
+          @media (min-width: 1025px) {
+            width: 100%;
+          }
+        }
+      
+        .slick-dots {
+      
+          position: absolute;
+          right: 0;
+          bottom: 35px;
+          left: 0;
+          display: flex !important;
+          align-items: center;
+          justify-content: flex-start;
+          width: fit-content;
+          padding: 0;
+          margin: 0 auto;
+      
+      
+          li {
+            display: flex;
+            margin: 0 4px;
+      
+            &.slick-active {
+              button {
+                display: flex;
+                width: 36px;
+                height: 3px;
+                padding: 0;
+                font-size: 0;
+                color: transparent;
+                cursor: pointer;
+                background: transparent;
+                background: #000000;
+                border: none;
+                transition: border .5s ease-in-out;
+              }
+            }
+      
+            button {
+              display: flex;
+              width: 36px;
+              height: 1px;
+              padding: 0;
+              font-size: 0;
+              color: transparent;
+              cursor: pointer;
+              background: transparent;
+              background: #000000;
+              border: none;
+              transition: border .5s ease-in-out;
+            }
+          }
+        }
+      
+    }
+    
+    .containerShelf {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+
+        @media (max-width: 460px){
+          width: 85%;
+        }
+
+        .containerTitleShelf {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px 0;
+            gap: 20px;
+            margin: 40px 0;
+
+            .titleShelf {
+                font-family: "Roboto";
+                font-size: 36px;
+                font-weight: 300;
+                line-height: 42px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #084154;
+
+                @media (max-width: 576px) {
+                  font-size: 25px;
+                  font-weight: 300;
+                  line-height: 21px;
+                }
+            }
+        }
+
+        .containerCardCategoryCustom {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
+
+            .shelfCard {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                box-shadow: 0px 4px 20px 7px #00000012;
+                border-radius: 10px;
+
+                @media (max-width: 1025px){
+                  margin: 20px 85px;
+                }
+
+                @media (max-width: 992px){
+                  margin: 55px;
+                }
+
+                @media (max-width: 670px){
+                  margin: 10px 30px;
+                }
+
+                .containerImage {
+                    border-bottom: 2px solid #3EC6E0;
+                    text-align: center;
+
+                    .imageCardCategory {
+                        padding-top: 20px;
+
+                        @media (max-width: 1200px) {
+                          width: 320px;
+                        }
+
+                        @media (max-width: 1025px){
+                          width: 300px;
+                        }
+
+                        @media (max-width: 576px){
+                          width: 280px;
+                        }
+
+                        @media (max-width: 460px){
+                          width: 220px;
+                        }
+                    }
+                }
+
+                .containerInfoCard {
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 30px;
+                    gap: 20px;
+
+                    background-color: #F5F5F5;
+                    
+                    .cardName {
+                        font-family: "Roboto";
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 16px;
+                        letter-spacing: 0em;
+                        color: #084154;
+                    }
+
+                    .cardPrice {
+                        font-family: "Roboto";
+                        font-size: 20px;
+                        font-weight: 900;
+                        line-height: 21px;
+                        letter-spacing: 0em;
+                        color: #084154;
+                    }
+                }
+
+                .containerButton {
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    width: 100%;
+
+                    .cardButton {
+                        width: 250px;
+                        height: 52px;
+
+                        background-color: #3EC6E0;
+                        color: #fff;
+
+                        border-radius: 5px;
+
+                        border: none;
+
+                        span {
+                            font-family: "Roboto";
+                            font-size: 18px;
+                            font-weight: 900;
+                            line-height: 21px;
+                            letter-spacing: 0em;
+                            color: #fff;
+                        }
+                    }
+
+                    .cardButtonMario {
+                      width: 250px;
+                      height: 52px;
+
+                      background-color: #084154;
+                      color: #fff;
+
+                      border-radius: 5px;
+
+                      border: none;
+                      
+                      position: relative;
+
+                      span {
+                          font-family: "Roboto";
+                          font-size: 18px;
+                          font-weight: 900;
+                          line-height: 21px;
+                          letter-spacing: 0em;
+                          color: #fff;
+                      }
+
+                      .iconMario {
+                        position: absolute;
+                        right: 5px;
+                        bottom: 0;
+                      }
+                  }
+                }
+            }
+        }
+    }
+}

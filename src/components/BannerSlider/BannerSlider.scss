@@ -1,0 +1,310 @@
+.big-banner {
+  position: relative;
+}
+
+.carrousel-images {
+  position: relative;
+  width: 100%;
+
+  .slick-prev {
+    position: absolute;
+    bottom: 28%;
+    right: 40px;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .slick-next {
+    position: absolute;
+    right: 15px;
+    bottom: 28%;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .slick-list {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 1025px) {
+      width: 100%;
+    }
+  }
+
+  .slick-dots {
+
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    left: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    padding: 0;
+    margin: 0 auto;
+
+
+    li {
+      display: flex;
+      margin: 0 4px;
+
+      &.slick-active {
+        button {
+          display: flex;
+          width: 36px;
+          height: 3px;
+          padding: 0;
+          font-size: 0;
+          color: transparent;
+          cursor: pointer;
+          background: transparent;
+          background: #000000;
+          border: none;
+          transition: border .5s ease-in-out;
+        }
+      }
+
+      button {
+        display: flex;
+        width: 36px;
+        height: 1px;
+        padding: 0;
+        font-size: 0;
+        color: transparent;
+        cursor: pointer;
+        background: transparent;
+        background: #000000;
+        border: none;
+        transition: border .5s ease-in-out;
+      }
+    }
+  }
+
+}
+
+.containerBannerCustom {
+  position: relative;
+  height: 840px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+
+  @media (max-width: 1300px){
+    height: 640px;
+  }
+
+  @media (max-width: 1025px){
+    height: 520px;
+  }
+
+  @media (max-width: 992px){
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  @media (max-width: 670px){
+    height: 540px;
+  }
+
+  @media (max-width: 576px){
+    height: 440px;
+  }
+
+  .infoBanner {
+
+    z-index: 99;
+    text-align: end;
+    padding: 0 15px 0 30%;
+
+    @media (max-width: 992px){
+      background-color: #00000040;
+      padding: 0 4% 15px 50%;
+    }
+
+    .nameBannerCustom p {
+      font-family: "Roboto";
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 54px;
+      letter-spacing: 0em;
+      color: #fff;
+      text-align: end;
+    }
+    .priceBannerCustom p {
+      font-family: "Roboto";
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 82px;
+      letter-spacing: 0em;
+      color: #3EC6E0;
+    }
+
+    .textBannerCustom {
+      max-width: 400px;
+      margin: 0 0 0 auto;
+
+      p {
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: right;
+        color: #fff;
+      }
+    }
+
+  }
+
+  .imageBanner {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+ 
+}
+
+.infoBarBannerteste {
+    font-size: 0;
+}
+
+.infoBarBanner {
+
+  display: flex;
+  flex-direction: row;
+  position: inherit;
+  text-align: end;
+
+  height: 63px;
+
+  @media (min-width: 993px) {
+    display: flex;
+    flex-direction: row;
+    position: inherit;
+    text-align: end;
+  
+    position: absolute;
+    right: -160px;
+    top: 315px;
+  
+    width: 384px;
+    height: 63px;
+  
+    transform: rotate(90deg);
+  }
+
+  @media (min-width: 1300px) {
+    top: 395px ;
+  }
+
+  .nameBarBanner {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3EC6E0;
+    width: 80%;
+    padding: 0 15px;
+    gap: 20px;
+    text-transform: uppercase;
+
+    @media (max-width: 1300px) {
+      width: 70%;
+    }
+
+    @media (max-width: 1025px) {
+      width: 60%;
+    }
+    @media (max-width: 992px) {
+      width: 80%;
+    }
+
+    @media (max-width: 768px) {
+      border-bottom-left-radius: 10px;
+      width: 70%;
+    }
+    p {
+      font-family: "Roboto";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: #fff;
+      margin: auto 10px;
+
+      @media (max-width: 992px) {
+        font-size: 13px;
+      }
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    .lineBarBanner {
+      background-color: #fff;
+      border-bottom: 1px solid #fff;
+      width: 30%;
+      height: 1px;
+      margin: auto;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+  
+  .textBarBanner {
+    background: #084154;
+    border-bottom-right-radius: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      border-bottom-right-radius: 0;
+      width: 30%;
+    }
+
+    .containerArrow {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      @media (min-width: 993px) {
+        transform: rotate(-90deg);
+      }
+
+      .itemArrow{
+        background: transparent;
+        border: none;
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+
+    .pageActiveBarBanner {
+      
+      font-family: "Roboto";
+      color: #fff;
+
+      @media (min-width: 993px) {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

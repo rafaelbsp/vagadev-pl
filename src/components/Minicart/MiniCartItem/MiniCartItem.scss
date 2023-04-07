@@ -1,0 +1,91 @@
+
+.containerMinicartItens {
+    
+    overflow: auto;
+    height: 100%;
+    max-height: 562px;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #c4c4c4;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #084154;
+        border-radius: 5px;
+    }
+
+    .containerMiniCartItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #084154;
+        margin: 0 10px;
+
+        .miniCartItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+        
+            .miniCartItemImage {
+                width: 180px;
+            }
+        
+            .miniCartItemData {
+
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                min-width: 100px;
+
+                .miniCartItemName {
+                    font-family: "Roboto";
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    letter-spacing: 0em;
+                    color: #084154;
+                }
+        
+                .miniCartItemPrice {
+                    font-family: "Roboto";
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 16px;
+                    letter-spacing: 0em;
+                    color: #084154;
+
+                }
+    
+                .miniCartItemQuantity  {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    span {
+    
+                    }
+
+                    button {
+                        background-color: #084154;
+                        color: #fff;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 15px;
+                        border: none;
+                    }
+                }
+            }
+        }
+    
+        .miniCartItemRemove {
+            background-color: transparent;
+            border: none;
+        }
+    }
+}

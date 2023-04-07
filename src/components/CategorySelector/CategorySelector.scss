@@ -1,0 +1,183 @@
+.categoryCustom {
+
+  margin: 40px 0;
+
+  .containerCategoryCustom {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 576px) {
+      width: 90%;
+    }
+
+    .subContainerCategoryCustom {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 0;
+      gap: 20px;
+      margin: 50px 0;
+
+      @media (max-width: 992px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 576px) {
+        align-items: baseline;
+      }
+
+      .containertitleCategoryCustom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+      }
+      
+      .containerSelectCategoryCustom {
+        
+        @media (max-width: 576px) {
+          width: 100%;
+        }
+
+        .selectCategoryCustom {
+          display: flex;
+          flex-direction: row ;
+          align-items: center;
+          justify-content: space-evenly;
+
+          border-radius: 5px;
+          border: 2px solid #084154;
+
+          width: 250px;
+          height: 50px;
+
+          @media (max-width: 576px) {
+            width: 100%;
+
+            justify-content: space-between;
+
+            padding: 0 20px;
+          }
+
+          p {
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: 0em;
+
+            span {
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        .containerCategoryOptions{
+          
+          display: flex;
+          flex-direction: column;
+
+          width: 250px;
+
+          position: absolute;
+          z-index: 10;
+
+          .categoryOptions {
+            border: 2px solid #084154;
+            border-top: none;
+            border-radius: 5px;
+            
+            height: 50px;
+
+            background-color: #fff;
+
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: 0em;
+          }
+        }
+
+      }
+
+      .titleCategoryCustom {
+        font-family: "Roboto";
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 42px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: #084154;
+
+        @media (max-width: 576px) {
+          font-size: 25px;
+          font-weight: 300;
+          line-height: 21px;
+        }
+      }
+
+
+    }
+
+    .containerCardCategoryCustom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @media (max-width: 1822px) {
+        justify-content: center;
+      }
+      
+      .subContainerCardCategoryCustom {
+          position: relative;
+
+        .cardCategoryCustom {
+          
+          .imageCardCategory {
+            width: 304px;
+
+          }
+
+          .flagCardCategory {
+            width: 67px;
+            height: 67px;
+
+            background-color: #3EC6E0;
+            border: 2px solid #084154;
+            border-radius: 5px;
+
+            font-size: 10px;
+            text-align: center;
+
+            position: absolute;
+            right: 10px;
+            top: -35px;
+
+            span {
+              color: linear-gradient(0deg, #084154, #084154),
+              linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+              font-family: "Roboto";
+              font-size: 36px;
+              font-weight: 900;
+              line-height: 65px;
+              letter-spacing: 0em;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

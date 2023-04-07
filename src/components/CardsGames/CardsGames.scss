@@ -1,0 +1,89 @@
+.cardsContainer {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    margin: 30px 0;
+
+    @media (max-width: 1300px) {
+        min-height: 210px;
+    }
+
+    .cardsPositionContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        top: -145px;
+
+        @media (max-width: 1025px) {
+            flex-direction: column;
+            position: initial;
+        }
+
+        .cardSubContainer { 
+            display: flex;
+            flex-direction: column;
+
+            .cardImage {
+                
+                @media (max-width: 1300px) {
+                    width: 500px;
+                }
+                
+                @media (max-width: 576px) {
+                    width: 375px;
+                }
+
+                @media (max-width: 375px) {
+                    width: 340px;
+                }
+            }
+    
+            .cardContainerBar {
+    
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+    
+                gap: 45px;
+                padding: 0 15px;
+                height: 60px;
+    
+                background: #3EC6E0;
+                border-left: 11px solid #084154;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+    
+                .cardBarName {
+                    font-family: "Roboto";
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 19px;
+                    letter-spacing: 0em;
+                    color: #084154;
+
+                    @media (max-width: 576px) {
+                        font-size: 12px;
+                    }
+                }
+    
+                .cardBarLine {
+                    border: 1px solid #084154;
+                    max-width: 248px;
+                    width: 100%;
+
+                    @media (max-width: 576px) {
+                        max-width: 72px;
+                    }
+
+                }
+            }
+        }
+    }
+
+}
