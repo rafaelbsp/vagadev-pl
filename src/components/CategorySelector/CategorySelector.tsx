@@ -39,13 +39,16 @@ export default function CategorySelector( ) {
     return (
         <section className="categoryCustom">
             <div className="containerCategoryCustom">
-                <div className="containertitleCategoryCustom">
-                    <img src={iconTittle} className="icon-title" alt="Icon title" />
-                    <p className="titleCategoryCustom">Dicas de games</p> 
+                <div className="subContainerCategoryCustom">
+
+                    <div className="containertitleCategoryCustom">
+                        <img src={iconTittle} className="icon-title" alt="Icon title" />
+                        <p className="titleCategoryCustom">Dicas de games</p> 
+                    </div>
 
                     <div className="containerSelectCategoryCustom">
                         <div onClick={()=> setOpenDrop(!openDrop)} className="selectCategoryCustom">
-                            <span>Selecione a categoria</span>
+                            <p>Selecione a categoria <span>({category})</span></p>
                             <img src={arrowGreen}/>
                         </div>
 
@@ -86,7 +89,7 @@ export default function CategorySelector( ) {
                                     <span>{ index + 1 }</span>
                                 </div>
     
-                                <a href={game.game_url}>
+                                <a href={game.game_url} target="_blank">
                                     <img src={game.thumbnail} className="imageCardCategory" />
                                 </a>
                             </div>

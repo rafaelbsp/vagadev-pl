@@ -98,7 +98,7 @@ export default function BannerSlider({
         slidesToScroll: 1,
         className :"carrousel-images",
         responsive: [],
-        centerMode: false,
+        centerMode: true,
         centerPadding: "0px",
         arrows:showArrowsInDevice,
         autoplay: false,

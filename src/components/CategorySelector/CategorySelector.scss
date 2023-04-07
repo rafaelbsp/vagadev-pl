@@ -8,7 +8,7 @@
     width: 70%;
     margin: 0 auto;
 
-    .containertitleCategoryCustom {
+    .subContainerCategoryCustom {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -22,6 +22,17 @@
 
       @media (max-width: 768px) {
         flex-direction: column;
+      }
+
+      @media (max-width: 576px) {
+        align-items: baseline;
+      }
+
+      .containertitleCategoryCustom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
       }
       
       .containerSelectCategoryCustom {
@@ -39,13 +50,16 @@
           width: 250px;
           height: 50px;
 
-          span {
+          p {
             font-family: "Roboto";
             font-size: 14px;
             font-weight: 300;
             line-height: 16px;
             letter-spacing: 0em;
 
+            span {
+              text-transform: capitalize;
+            }
           }
         }
 
@@ -87,6 +101,12 @@
         text-align: left;
 
         color: #084154;
+
+        @media (max-width: 576px) {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 21px;
+        }
       }
 
 
@@ -95,9 +115,13 @@
     .containerCardCategoryCustom {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 20px;
+
+      @media (max-width: 1822px) {
+        justify-content: center;
+      }
       
       .subContainerCardCategoryCustom {
           position: relative;
@@ -105,7 +129,7 @@
         .cardCategoryCustom {
           
           .imageCardCategory {
-
+            width: 304px;
           }
 
           .flagCardCategory {
