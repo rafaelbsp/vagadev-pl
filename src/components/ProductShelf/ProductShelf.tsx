@@ -2,9 +2,9 @@
 import { useMediaQuery } from 'react-responsive' 
 import iconTittle from '../../assets/svgs/iconTitle.svg'
 import { PRODUCTS } from '../../data/products';
-import { useShoppingCart } from '../../context/ShoppingCartContext';
+
 import "./ProductShelf.scss"
-import Product from './Product';
+import Product from './Product/Product';
 
 
 export default function ProductShelf() {
@@ -15,7 +15,7 @@ export default function ProductShelf() {
 
         <section className="shelf-product">
           {isTabletScreen ? (
-            
+
             <div className="containerShelf">
                 <div className="containerTitleShelf">
                     <img src={iconTittle} className="icon-title" alt="Icon title" />

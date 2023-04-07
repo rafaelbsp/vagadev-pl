@@ -200,6 +200,35 @@
                             color: #fff;
                         }
                     }
+
+                    .cardButtonMario {
+                      width: 250px;
+                      height: 52px;
+
+                      background-color: #084154;
+                      color: #fff;
+
+                      border-radius: 5px;
+
+                      border: none;
+                      
+                      position: relative;
+
+                      span {
+                          font-family: "Roboto";
+                          font-size: 18px;
+                          font-weight: 900;
+                          line-height: 21px;
+                          letter-spacing: 0em;
+                          color: #fff;
+                      }
+
+                      .iconMario {
+                        position: absolute;
+                        right: 5px;
+                        bottom: 0;
+                      }
+                  }
                 }
             }
         }

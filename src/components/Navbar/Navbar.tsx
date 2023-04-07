@@ -21,6 +21,8 @@ const Navbar = () => {
 
     const [showDrawer, setShowDrawer] = useState(false);
 
+    console.log("Navbar openMinicart showDrawer ", showDrawer);
+
     return (
         <section className="navbar">
           {isMobileScreen ? (
@@ -60,7 +62,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav-subContainer">
-
                     <a className="nav-link" href='/contato' >
                         <img src={iconContato} className="icon-contato" alt="Icon contato" />
                         <span>Contato</span>
@@ -78,9 +79,10 @@ const Navbar = () => {
                             <span>{cartQuantity}</span> 
                         )}
                     </button>
-
-                    <Minicart />
+                    
                 </div>
+
+                <Minicart openMinicart={showDrawer} />
             </nav>
           )}
         </section>

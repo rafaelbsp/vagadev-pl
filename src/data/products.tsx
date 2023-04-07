@@ -1,6 +1,6 @@
-import productOutriders from "../../public/imgs/product_outriders.png";
-import productDonkey from "../../public/imgs/product_donkey_kong.png";
-import productCyberpunk from "../../public/imgs/product_cyberpunk2077.png";
+import productOutriders from "../assets/imgs/product_outriders.png";
+import productDonkey from "../assets/imgs/product_donkey_kong.png";
+import productCyberpunk from "../assets/imgs/product_cyberpunk2077.png";
 
 export const PRODUCTS = [
     {

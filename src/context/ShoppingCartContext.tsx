@@ -98,7 +98,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }}
     >
       {children}
-      
     </ShoppingCartContext.Provider>
   )
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { useShoppingCart } from '../../context/ShoppingCartContext'
+import { useShoppingCart } from '../../../context/ShoppingCartContext'
+import iconMario from '../../../assets/svgs/iconMario.svg'
 
 
 type StoreItemProps = {
@@ -14,8 +14,6 @@ function Product({ id, productName, price, productImage }: StoreItemProps) {
     const {
         getItemQuantity,
         increaseCartQuantity,
-        decreaseCartQuantity,
-        removeFromCart,
     } = useShoppingCart()
 
     const quantity = getItemQuantity(id)
@@ -44,8 +42,9 @@ function Product({ id, productName, price, productImage }: StoreItemProps) {
                             <span>COMPRAR</span>
                         </button>
                         ) : (
-                        <button className="cardButton" onClick={() => increaseCartQuantity(id)}>
-                            <span>COMPRAR</span>
+                        <button className="cardButtonMario">
+                            <span>COMPRADO !</span>
+                            <img src={iconMario} className="iconMario"/>
                         </button>
                     )}
                 </div>

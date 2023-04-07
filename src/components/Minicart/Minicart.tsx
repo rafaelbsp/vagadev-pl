@@ -1,21 +1,58 @@
-import React, { useState } from 'react'
+import { useShoppingCart } from '../../context/ShoppingCartContext'
+import MiniCartItem from './MiniCartItem/MiniCartItem';
+import closeIcon from '../../assets/svgs/closeIcon.svg'
 
 import "./Minicart.scss"
+import { useState } from 'react';
 
-function Minicart() {
-    
-  return (
+interface MiniCartProps {
+    openMinicart: boolean //
+}
 
-    <div className="containerMinicart MenuDrawerShown">
-        Minicart
+function Minicart({ openMinicart }: MiniCartProps) {
 
-    </div>
+    const { cartItems } = useShoppingCart()
 
-    // <div className={ showDrawer ? "MenuDrawerShown" : "MenuDrawerHidden" }>
-    //     Minicart
-    
-    // </div>
-  )
+    const [close, setClose] = useState(openMinicart);
+
+    return (
+        <>  
+                        {/* MEU ESTADO AQUI */}
+            <div className={ openMinicart ? "containerMinicart MenuDrawerShown" : "containerMinicart MenuDrawerHidden" }>
+
+                <div> 
+                    <div className="containerTitleMinicart" onClick={() => { setClose(!openMinicart) }}> 
+                        <img src={closeIcon}  className="closeIcon"/>
+
+                        <span>Meu Carrinho</span>
+                    </div>
+                    <div className="containerMinicartItens">
+                        {cartItems.map(item => (
+                            <MiniCartItem key={item.id} {...item}  />
+                        ))}
+                    </div>
+                </div>
+                
+                <div className="containerTotalCart">
+                    <div className="totalCart">
+                        Total:
+                    </div>
+                    <div className="valueTotalCart">
+                        200000
+                    </div>
+                </div>
+
+            </div>
+
+            {/* {showDrawer && (
+                <div
+                    className={styles.MenuDrawerOverlay}
+                    onClick={() => setShowDrawer(false)}
+                    aria-hidden="true"
+                />
+            )} */}
+        </>
+    )
 }
 
 export default Minicart
